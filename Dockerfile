@@ -1,11 +1,7 @@
-FROM node:alpine
+FROM node:12.18.4-alpine3.11
 
-WORKDIR app
-
-RUN npm i -g @angular/cli
-
-RUN apk add git
+RUN apk update \
+  && npm i -g @angular/cli@10.1.2
 
 EXPOSE 4200
-
 ENTRYPOINT ash
